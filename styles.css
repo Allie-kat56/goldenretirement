@@ -1,0 +1,92 @@
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body & typography */
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background-color: #faf6f1;
+  color: #333;
+  line-height: 1.7;
+  padding-bottom: 200px; /* space for sticky table */
+}
+
+/* Header */
+header {
+  background: #c5a572;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 4px solid #5c3d2e;
+}
+
+header h1 {
+  font-size: 2.2rem;
+}
+
+/* Main content */
+main {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+section {
+  margin-bottom: 40px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+  margin-bottom: 10px;
+  color: #5c3d2e;
+}
+
+/* Sticky comparison table */
+.comparison-table {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 2px solid #c5a572;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+  overflow-x: auto;
+  padding: 10px;
+  z-index: 999;
+}
+
+.comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.comparison-table th {
+  background: #c5a572;
+  color: white;
+}
+
+.comparison-table button {
+  background: #c5a572;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.comparison-table button:hover {
+  background: #a07d4f;
+}
