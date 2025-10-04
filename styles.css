@@ -1,92 +1,256 @@
-/* Global reset */
+/* --- Global & Reset --- */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Body & typography */
+/* --- Color Palette Definitions ---
+    #FAF7F0: Primary Background (Soft Cream)
+    #3F3935: Primary Text (Rich Charcoal/Brown)
+    #B8860B: Primary Accent (Deep Gold)
+    #C35835: Secondary Accent/CTA (Burnt Sienna/Orange)
+    #F4F0E4: Secondary Background (Light Gold Tint)
+*/
+
+/* --- Body & Typography --- */
 body {
-  font-family: Georgia, 'Times New Roman', serif;
-  background-color: #faf6f1;
-  color: #333;
-  line-height: 1.7;
-  padding-bottom: 200px; /* space for sticky table */
+    /* Set the clean, soft cream background */
+    background-color: #FAF7F0; 
+    /* Set the main text color to the rich charcoal */
+    color: #3F3935; 
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.6;
+    /* Ensure space for the comparison table at the bottom */
+    padding-bottom: 200px; 
 }
 
-/* Header */
+a {
+    color: #C35835; /* Burnt Sienna for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #B8860B; /* Deep Gold on hover */
+}
+
+/* --- Header (Branding & Trust) --- */
 header {
-  background: #c5a572;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 4px solid #5c3d2e;
+    /* Pure white for a crisp, clean top band */
+    background-color: white; 
+    padding: 25px 5%;
+    text-align: center;
+    /* Subtle gold line to separate from content */
+    border-bottom: 3px solid #D5B888; 
 }
 
 header h1 {
-  font-size: 2.2rem;
+    margin: 0 0 5px 0;
+    color: #B8860B; /* Make the brand name stand out in Deep Gold */
+    font-size: 2.5em;
+    letter-spacing: 2px;
 }
 
-/* Main content */
+header p {
+    color: #C35835; /* Use Burnt Sienna for the tagline for emphasis */
+    font-style: italic;
+    margin: 0;
+}
+
+/* --- Main Content Layout --- */
 main {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 0 15px;
+    max-width: 1100px; /* Widened slightly for review cards */
+    margin: 30px auto;
+    padding: 0 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
+/* --- Section Styling (General Content Blocks) --- */
 section {
-  margin-bottom: 40px;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
-section h2 {
-  margin-bottom: 10px;
-  color: #5c3d2e;
+/* Style for the Intro section (which is not in the grid) */
+.intro {
+    max-width: 900px;
+    margin: 30px auto 40px auto;
+    text-align: center;
 }
 
-/* Sticky comparison table */
+.intro h2 {
+    color: #3F3935; 
+    margin-bottom: 10px;
+}
+
+.intro strong {
+    color: #B8860B; /* Deep Gold for key phrases */
+    font-weight: bold;
+}
+
+/* --- Article Cards (Provider Reviews) --- */
+main article {
+    background-color: white; 
+    border: 1px solid #E0DBCF; /* Very subtle light border */
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+main article:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    border-color: #C35835; /* Highlight with Burnt Sienna on hover */
+}
+
+main article h3 {
+    color: #B8860B; /* Provider names in Deep Gold */
+    font-size: 1.4em;
+    margin-top: 0;
+}
+
+main article img {
+    max-width: 100px; 
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 4px; /* Soft edges for images */
+}
+
+/* --- Sticky Comparison Table (Your Existing Structure) --- */
 .comparison-table {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #fff;
-  border-top: 2px solid #c5a572;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
-  overflow-x: auto;
-  padding: 10px;
-  z-index: 999;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* Use the light gold tint for the sticky section */
+    background: #F4F0E4; 
+    border-top: 2px solid #C35835; /* Burnt Sienna separator */
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+    overflow-x: auto;
+    padding: 15px 10px;
+    z-index: 999;
+    
+    /* Center the content for a cleaner look */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comparison-table h2 {
+    color: #C35835; /* Burnt Sienna for the table title */
+    margin-bottom: 10px;
 }
 
 .comparison-table table {
-  width: 100%;
-  border-collapse: collapse;
+    width: 90%; /* Keep table contained */
+    min-width: 600px; /* Ensure table is readable on small screens */
+    border-collapse: collapse;
 }
 
 .comparison-table th,
 .comparison-table td {
-  padding: 12px;
-  text-align: center;
-  border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #E0DBCF;
 }
 
 .comparison-table th {
-  background: #c5a572;
-  color: white;
+    background: #B8860B; /* Deep Gold background for table header */
+    color: white;
+    font-weight: bold;
 }
 
+/* Style for star ratings */
+.comparison-table td:nth-child(2) {
+    color: #C35835; 
+    font-size: 1.2em;
+}
+
+/* No button in your HTML, but keeping your button styles with new colors */
 .comparison-table button {
-  background: #c5a572;
-  border: none;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 6px;
-  cursor: pointer;
+    background: #C35835; /* Burnt Sienna button */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .comparison-table button:hover {
-  background: #a07d4f;
+    background: #D56C4A; /* Slightly lighter Burnt Sienna on hover */
+}
+
+/* --- FAQ Section --- */
+.faq {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    /* Use the light gold tint for the FAQ background */
+    background-color: #F4F0E4; 
+}
+
+.faq h2 {
+    text-align: center;
+    color: #3F3935;
+    margin-bottom: 25px;
+}
+
+.faq ul {
+    list-style: none;
+    padding: 0;
+}
+
+.faq li {
+    padding: 15px 0;
+    border-bottom: 1px dashed #D5B888; /* Soft dashed gold divider */
+}
+
+.faq li:last-child {
+    border-bottom: none;
+}
+
+.faq strong {
+    color: #C35835; /* Burnt Sienna for the questions */
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: #3F3935; /* Rich Brown/Charcoal for a strong, solid base */
+    color: #F4F0E4; /* Light cream text on dark background */
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* Stack review boxes on small screens */
+    }
+    header {
+        padding: 15px 5%;
+    }
+    header h1 {
+        font-size: 2em;
+    }
+    .comparison-table {
+        padding: 10px 0;
+    }
+    .comparison-table table {
+        width: 100%;
+        min-width: 450px; /* Allow for horizontal scroll on tiny screens */
+        font-size: 0.8em;
+    }
 }
