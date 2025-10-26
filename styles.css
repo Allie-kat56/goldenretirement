@@ -110,3 +110,49 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap
+
+/* ===========================================================
+   Sticky Comparison Table – Subtle UI Enhancements
+   Hover effects, alternating rows, CTA buttons, smooth scrolling
+=========================================================== */
+
+/* 1. Row hover effect */
+.comparison-table tbody tr:hover {
+  background-color: #FFF7E6; /* very soft warm gold */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* subtle lift */
+  transform: translateY(-2px);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+/* 2. Alternating row shading for readability */
+.comparison-table tbody tr:nth-child(even) {
+  background-color: #FCF8F0; /* soft cream */
+}
+
+/* 3. CTA button inside table (if used) */
+.comparison-table td button {
+  background: #B8860B; /* deep gold */
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+.comparison-table td button:hover {
+  background: #CFAF5E; /* lighter gold hover */
+  transform: translateY(-2px);
+}
+
+/* 4. Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 5. Sticky table header on scroll (desktop) */
+.comparison-table table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: #B8860B; /* ensure header remains visible */
+}
