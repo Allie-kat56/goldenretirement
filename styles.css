@@ -1,7 +1,11 @@
 /* ===========================================================
-   GOLDEN RETIREMENT – FINAL OPTIMIZED STYLESHEET
-   Unified layout width, responsive design, sticky table,
-   polished spacing and image balance.
+   GOLDEN RETIREMENT – OPTIMIZED STYLESHEET
+   Top 5 Optimizations Applied:
+   1. Responsive & Mobile Layout
+   2. FAQ Structured Data (in HTML)
+   3. Lazy-load images (in HTML)
+   4. Accessibility: Contrast & Focus States
+   5. Star Ratings Visual Design
 =========================================================== */
 
 /* --- GLOBAL RESET --- */
@@ -31,7 +35,7 @@ h1, h2, h3, h4 {
   margin-bottom: 15px;
 }
 
-/* Links */
+/* Links - OPTIMIZATION #4: Focus states for accessibility */
 a {
   color: #C35835;
   text-decoration: none;
@@ -40,6 +44,10 @@ a {
 a:hover {
   color: #B8860B;
   opacity: 0.9;
+}
+a:focus {
+  outline: 3px solid #B8860B;
+  outline-offset: 2px;
 }
 
 /* --- HEADER --- */
@@ -96,13 +104,17 @@ section, main, footer, .cta {
   background: #B25A2E;
   transform: translateY(-3px);
 }
+.intro .btn-primary:focus {
+  outline: 3px solid #B8860B;
+  outline-offset: 3px;
+}
 
-/* --- DECORATIVE IMAGES ROW --- */
+/* --- DECORATIVE IMAGES ROW - OPTIMIZATION #1: Responsive --- */
 .decorative-row {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px; /* reduced gap for better balance */
+  gap: 20px;
   flex-wrap: wrap;
   background: #FFFFFF;
   border-radius: 12px;
@@ -111,9 +123,10 @@ section, main, footer, .cta {
 }
 
 .decorative-img-wrapper {
-  flex: 1 1 30%;
-  max-width: 320px;
-  height: 180px;
+  flex: 1 1 calc(33.333% - 20px);
+  min-width: 250px;
+  max-width: 350px;
+  height: 200px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 3px 12px rgba(0,0,0,0.08);
@@ -126,35 +139,97 @@ section, main, footer, .cta {
 .decorative-img-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* ensures balanced fill */
+  object-fit: cover;
   border-radius: 10px;
 }
 
-/* --- PROVIDER REVIEW CARDS --- */
-main {
+/* --- PROVIDER REVIEW CARDS - OPTIMIZATION #1: Responsive Grid --- */
+.provider-section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
-  text-align: center;
-}
-
-main article {
+  padding: 30px;
   background: #FFFFFF;
   border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.provider-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 12px;
   padding: 20px;
+  text-align: center;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-main article:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+
+.provider-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
-main img {
+
+.provider-card h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  color: #3F3935;
+}
+
+.provider-card img {
   width: 100%;
   height: 150px;
   object-fit: contain;
   border-radius: 8px;
+  margin: 15px 0;
+}
+
+.provider-card p {
+  font-size: 0.95em;
+  line-height: 1.6;
   margin-bottom: 15px;
+  color: #5A5A5A;
+}
+
+.provider-card .btn-primary {
+  display: inline-block;
+  background: #C35835;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 30px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.provider-card .btn-primary:hover {
+  background: #B25A2E;
+  transform: translateY(-2px);
+}
+
+.provider-card .btn-primary:focus {
+  outline: 3px solid #B8860B;
+  outline-offset: 2px;
+}
+
+/* --- STAR RATINGS - OPTIMIZATION #5: Visual Star Ratings --- */
+.star-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.star-rating .stars {
+  color: #FFD700;
+  font-size: 1.3em;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.star-rating .rating-text {
+  color: #6B5B4D;
+  font-size: 0.9em;
+  font-weight: 600;
 }
 
 /* --- STICKY COMPARISON TABLE --- */
@@ -172,22 +247,48 @@ main img {
   to { opacity: 1; transform: translateY(0); }
 }
 
+.comparison-table h2 {
+  margin-bottom: 10px;
+}
+
+.comparison-table > p {
+  margin-bottom: 20px;
+  color: #6B5B4D;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
 .comparison-table table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 600px;
 }
 
 .comparison-table th, .comparison-table td {
-  padding: 12px;
+  padding: 14px 16px;
   text-align: left;
+  border-bottom: 1px solid #E5E5E5;
 }
 
+/* OPTIMIZATION #4: Improved contrast for table header */
 .comparison-table thead th {
   position: sticky;
   top: 0;
   z-index: 2;
-  background-color: #B8860B;
-  color: #fff;
+  background-color: #3F3935;
+  color: #FFFFFF;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+}
+
+.comparison-table tbody tr {
+  transition: all 0.25s ease;
 }
 
 .comparison-table tbody tr:nth-child(even) {
@@ -198,81 +299,342 @@ main img {
   background-color: #FFF7E6;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transform: translateY(-2px);
-  transition: all 0.25s ease;
   cursor: pointer;
 }
 
+.comparison-table .stars {
+  color: #FFD700;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+}
+
 /* --- FAQ SECTION --- */
+.faq {
+  padding: 30px;
+}
+
+.faq h2 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
 .faq ul {
   list-style: none;
 }
+
 .faq li {
-  margin-bottom: 12px;
+  margin-bottom: 18px;
+  padding: 15px;
+  background: #FCF8F0;
+  border-left: 4px solid #B8860B;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.faq li:hover {
+  background: #FFF7E6;
+}
+
+.faq li strong {
+  display: block;
+  color: #3F3935;
+  margin-bottom: 8px;
+  font-size: 1.05em;
+}
+
+.faq li span {
+  color: #5A5A5A;
+  line-height: 1.6;
 }
 
 /* --- CTA SECTION --- */
 .cta {
   text-align: center;
+  padding: 40px 30px;
+  background: linear-gradient(135deg, #FAF7F0 0%, #FFFFFF 100%);
 }
+
 .cta h3 {
+  font-size: 1.8em;
   margin-bottom: 15px;
+  color: #3F3935;
 }
+
+.cta p {
+  margin-bottom: 20px;
+  color: #6B5B4D;
+  font-size: 1.1em;
+}
+
 .cta .btn-primary {
   display: inline-block;
   background: #C35835;
   color: #fff;
   font-weight: 600;
-  padding: 12px 28px;
+  padding: 14px 32px;
   border-radius: 30px;
+  font-size: 1.1em;
   transition: background 0.3s ease, transform 0.2s ease;
 }
+
 .cta .btn-primary:hover {
   background: #B25A2E;
   transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(195, 88, 53, 0.3);
+}
+
+.cta .btn-primary:focus {
+  outline: 3px solid #B8860B;
+  outline-offset: 3px;
 }
 
 /* --- FOOTER --- */
 footer {
   text-align: center;
+  padding: 25px 30px;
+  background: #3F3935;
+  color: #FFFFFF;
+  border-radius: 12px;
 }
+
 footer p {
   margin-bottom: 8px;
 }
+
 footer .disclosure {
-  font-size: 0.9rem;
-  color: #6b5b4d;
+  font-size: 0.85rem;
+  color: #D5B888;
 }
 
-/* --- RESPONSIVE DESIGN --- */
+/* =================================================================
+   RESPONSIVE DESIGN - OPTIMIZATION #1
+================================================================= */
 
-/* Tablets (≤1024px) */
+/* Large Tablets (≤1024px) */
 @media (max-width: 1024px) {
-  main {
-    grid-template-columns: repeat(2, 1fr);
+  header h1 {
+    font-size: 2.3em;
   }
+
+  /* 2 cards per row on tablets */
+  .provider-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* 2 decorative images per row */
   .decorative-img-wrapper {
-    max-width: 280px;
+    flex: 1 1 calc(50% - 20px);
+  }
+
+  .intro h2 {
+    font-size: 1.7em;
   }
 }
 
-/* Mobile (≤700px) */
-@media (max-width: 700px) {
+/* Small Tablets & Large Phones (≤768px) */
+@media (max-width: 768px) {
   section, main, footer, .cta {
-    margin: 25px auto;
-    padding: 20px;
+    margin: 25px 15px;
+    padding: 25px 20px;
   }
 
-  .decorative-row {
-    flex-direction: column;
-    align-items: center;
+  header {
+    padding: 25px 5%;
   }
 
-  main {
-    grid-template-columns: 1fr;
+  header h1 {
+    font-size: 2em;
+  }
+
+  header p {
+    font-size: 1em;
   }
 
   .intro h2 {
     font-size: 1.5em;
+  }
+
+  /* Stack decorative images vertically */
+  .decorative-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .decorative-img-wrapper {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  /* Single column for provider cards */
+  .provider-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .comparison-table h2 {
+    font-size: 1.5em;
+  }
+
+  .cta h3 {
+    font-size: 1.5em;
+  }
+
+  /* Make table more mobile-friendly */
+  .comparison-table table {
+    font-size: 0.9em;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 10px 12px;
+  }
+}
+
+/* Mobile Phones (≤480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.7em;
+  }
+
+  header p {
+    font-size: 0.95em;
+  }
+
+  section, main, footer, .cta {
+    margin: 20px 10px;
+    padding: 20px 15px;
+  }
+
+  .intro h2 {
+    font-size: 1.3em;
+  }
+
+  .intro .btn-primary {
+    padding: 10px 20px;
+    font-size: 0.95em;
+  }
+
+  .provider-card h3 {
+    font-size: 1.2em;
+  }
+
+  .provider-card img {
+    height: 120px;
+  }
+
+  .star-rating .stars {
+    font-size: 1.1em;
+  }
+
+  /* Card-style table for very small screens */
+  .comparison-table table {
+    border: 0;
+  }
+
+  .comparison-table thead {
+    display: none;
+  }
+
+  .comparison-table tbody tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .comparison-table td {
+    display: block;
+    text-align: right;
+    padding: 10px 15px;
+    border-bottom: 1px solid #F0F0F0;
+  }
+
+  .comparison-table td:last-child {
+    border-bottom: none;
+  }
+
+  .comparison-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    color: #3F3935;
+  }
+
+  .faq li {
+    padding: 12px;
+  }
+
+  .faq li strong {
+    font-size: 1em;
+  }
+
+  .cta h3 {
+    font-size: 1.3em;
+  }
+
+  .cta p {
+    font-size: 1em;
+  }
+
+  .cta .btn-primary {
+    padding: 12px 24px;
+    font-size: 1em;
+  }
+}
+
+/* Extra Small Devices (≤360px) */
+@media (max-width: 360px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  .intro h2 {
+    font-size: 1.2em;
+  }
+
+  .decorative-img-wrapper {
+    height: 160px;
+  }
+
+  .provider-card {
+    padding: 15px;
+  }
+
+  .star-rating {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  header {
+    border-bottom: 2px solid #000;
+  }
+
+  .btn-primary {
+    display: none;
+  }
+
+  .decorative-row {
+    display: none;
+  }
+
+  section, main, footer, .cta {
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+
+  .comparison-table thead th {
+    background-color: #000;
+    color: #fff;
   }
 }
 
