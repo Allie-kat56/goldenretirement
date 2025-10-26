@@ -267,3 +267,25 @@ button, .btn-primary {
 html {
   scroll-behavior: smooth;
 }
+
+/* --- decorative row styling --- */
+.decorative-row {
+  max-width: 1150px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.decorative-img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
