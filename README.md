@@ -22,12 +22,15 @@ GoldenRetirement/
 ├─ styles.css ← Styling for layout and theme
 ├─ sitemap.xml ← For search engine indexing
 ├─ robots.txt ← Search engine crawling instructions
-├─ CNAME ← Custom domain configuration
+├─ CNAME ← Custom domain configuration (optional)
 └─ images/ ← Folder for all image assets
-├─ goldira_nestegg.jpg
-├─ goldira_senior_review.jpg
-└─ goldira_coins_closeup.jpg
-
+├─ augusta.jpg ← Provider logo (Augusta Precious Metals)
+├─ birch.jpg ← Provider logo (Birch Gold Group)
+├─ goldco.jpg ← Provider logo (Goldco)
+├─ regal.jpg ← Provider logo (Regal Assets)
+├─ goldira_coins_closeup.jpg ← Intro / hero image (stack of coins)
+├─ goldira_nestegg.jpg ← CTA image (golden egg)
+└─ goldira_senior_review.jpg ← Inline review chart image
 
 ---
 
