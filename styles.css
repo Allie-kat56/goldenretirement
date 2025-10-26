@@ -1,7 +1,6 @@
 /* ===========================================================
-   GOLDEN RETIREMENT – COMPLETE UPDATED STYLESHEET
-   Carded layout, centered sections, sticky table, polished look
-   Adjusted decorative images and provider cards for better balance
+   GOLDEN RETIREMENT – FINAL POLISHED STYLESHEET
+   Consistent widths, refined spacing, balanced visuals
 =========================================================== */
 
 /* --- GLOBAL RESET --- */
@@ -13,8 +12,8 @@
 
 /* --- BASE TYPOGRAPHY & BODY --- */
 body {
-  background-color: #FAF7F0; /* Soft cream base */
-  color: #3F3935; /* Rich brown/charcoal for readable contrast */
+  background-color: #FAF7F0;
+  color: #3F3935;
   font-family: 'Georgia', serif;
   font-size: 1.05rem;
   line-height: 1.75;
@@ -60,14 +59,18 @@ header p {
   font-size: 1.15em;
 }
 
-/* --- INTRO SECTION --- */
-.intro {
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 40px 25px;
+/* --- UNIVERSAL CARD STYLE --- */
+section, main, footer, .cta {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
   background: #FFFFFF;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+/* --- INTRO SECTION --- */
+.intro {
   text-align: center;
 }
 .intro h2 {
@@ -93,14 +96,49 @@ header p {
   transform: translateY(-3px);
 }
 
-/* --- MAIN CONTENT (REVIEW GRID) --- */
+/* --- DECORATIVE IMAGES ROW --- */
+.decorative-row {
+  max-width: 1100px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  flex-wrap: wrap;
+  gap: 10px; /* tighter spacing */
+}
+.decorative-img-wrapper {
+  width: 320px;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  background: #fff;
+}
+.decorative-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- MAIN CONTENT (PROVIDER REVIEWS GRID) --- */
 main {
-  max-width: 1150px;
-  margin: 40px auto;
-  padding: 0 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* slightly smaller for 4 cards in one row */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
+  padding: 30px;
+  background: #FFFFFF;
+}
+@media (min-width: 1100px) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 main article {
   background: #FFFFFF;
@@ -114,46 +152,16 @@ main article:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.1);
 }
-.review-image {
-  max-width: 100%;
-  height: 150px;
-  object-fit: contain;
+main article img {
+  max-width: 200px;
   display: block;
   margin: 15px auto;
   border-radius: 8px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
 }
 
-/* --- SENIOR REVIEW SECTION --- */
-.senior-review {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 30px;
-  background: #FFFFFF;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  text-align: center;
-}
-.senior-review h2 {
-  margin-bottom: 20px;
-}
-.intro-image {
-  max-width: 300px;
-  width: 100%;
-  display: block;
-  margin: 0 auto 20px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
 /* --- STICKY COMPARISON TABLE --- */
 .comparison-table {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 15px;
-  background: #FFFFFF;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   overflow: hidden;
   text-align: left;
   opacity: 0;
@@ -192,14 +200,6 @@ main article:hover {
 }
 
 /* --- FAQ SECTION --- */
-.faq {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 30px;
-  background: #FFFFFF;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-}
 .faq ul {
   list-style: none;
 }
@@ -209,12 +209,6 @@ main article:hover {
 
 /* --- CTA SECTION --- */
 .cta {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 30px;
-  background: #FFFFFF;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   text-align: center;
 }
 .cta h3 {
@@ -236,12 +230,6 @@ main article:hover {
 
 /* --- FOOTER --- */
 footer {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 20px;
-  background: #FFFFFF;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   text-align: center;
 }
 footer p {
@@ -257,80 +245,7 @@ button, .btn-primary {
   cursor: pointer;
 }
 
-/* --- IMAGES --- */
-.cta-image {
-  max-width: 200px;
-  display: block;
-  margin: 0 auto 15px auto;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-}
-
 /* --- SMOOTH SCROLL --- */
 html {
   scroll-behavior: smooth;
 }
-
-/* --- DECORATIVE ROW --- */
-.decorative-row {
-  max-width: 1150px;
-  margin: 40px auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding: 20px;
-  background: #FFFFFF;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.decorative-img-wrapper {
-  width: 280px;        
-  height: 180px;       
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-  background: #fff;
-}
-
-.decorative-img-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   /* fills box while keeping aspect ratio, may crop slightly */
-}
-
-/* --- RESPONSIVE & MAX WIDTH TWEAKS --- */
-@media (min-width: 1300px) {
-  /* Decorative images row stays centered, images scale up slightly but max out */
-  .decorative-row {
-    justify-content: center;
-  }
-
-  .decorative-img-wrapper {
-    width: 300px;      /* slightly bigger but uniform */
-    height: 200px;     /* maintain aspect ratio box */
-  }
-
-  /* Provider cards: max width per card to keep all 4 on one row */
-  main {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 1280px; /* prevent stretching too far */
-  }
-}
-
-@media (max-width: 1200px) {
-  main {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* fallback for medium screens */
-  }
-
-  .decorative-img-wrapper {
-    width: 280px;
-    height: 180px;
-  }
-}
-
