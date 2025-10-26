@@ -70,7 +70,7 @@ header p {
 }
 
 /* --- UNIFIED CONTAINER WIDTH --- */
-section, main, footer, .cta {
+section, footer, .cta {
   max-width: 1150px;
   margin: 40px auto;
   background: #FFFFFF;
@@ -79,9 +79,20 @@ section, main, footer, .cta {
   padding: 30px;
 }
 
+/* Main doesn't need these styles - it's just a wrapper */
+main {
+  max-width: 100%;
+}
+
 /* --- INTRO SECTION --- */
 .intro {
   text-align: center;
+  max-width: 1150px;
+  margin: 40px auto;
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 30px;
 }
 .intro h2 {
   font-size: 1.9em;
@@ -116,6 +127,8 @@ section, main, footer, .cta {
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
+  max-width: 1150px;
+  margin: 40px auto;
   background: #FFFFFF;
   border-radius: 12px;
   padding: 25px;
@@ -124,7 +137,7 @@ section, main, footer, .cta {
 
 .decorative-img-wrapper {
   flex: 1 1 calc(33.333% - 20px);
-  min-width: 250px;
+  min-width: 280px;
   max-width: 350px;
   height: 200px;
   border-radius: 10px;
@@ -148,6 +161,8 @@ section, main, footer, .cta {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
+  max-width: 1150px;
+  margin: 40px auto;
   padding: 30px;
   background: #FFFFFF;
   border-radius: 12px;
@@ -162,6 +177,9 @@ section, main, footer, .cta {
   text-align: center;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .provider-card:hover {
@@ -173,6 +191,10 @@ section, main, footer, .cta {
   font-size: 1.3em;
   margin-bottom: 10px;
   color: #3F3935;
+  min-height: 2.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .provider-card img {
@@ -181,6 +203,7 @@ section, main, footer, .cta {
   object-fit: contain;
   border-radius: 8px;
   margin: 15px 0;
+  flex-shrink: 0;
 }
 
 .provider-card p {
@@ -188,6 +211,9 @@ section, main, footer, .cta {
   line-height: 1.6;
   margin-bottom: 15px;
   color: #5A5A5A;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
 }
 
 .provider-card .btn-primary {
@@ -198,6 +224,9 @@ section, main, footer, .cta {
   padding: 10px 24px;
   border-radius: 30px;
   transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: auto;
+  align-self: center;
+  min-width: 140px;
 }
 
 .provider-card .btn-primary:hover {
@@ -234,8 +263,15 @@ section, main, footer, .cta {
 
 /* --- STICKY COMPARISON TABLE --- */
 .comparison-table {
-  position: relative;
-  overflow-x: auto;
+  position: sticky;
+  top: 20px;
+  z-index: 10;
+  max-width: 1150px;
+  margin: 40px auto;
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  padding: 30px;
   animation: fadeInUp 0.8s ease forwards;
   opacity: 0;
   transform: translateY(10px);
@@ -310,6 +346,11 @@ section, main, footer, .cta {
 
 /* --- FAQ SECTION --- */
 .faq {
+  max-width: 1150px;
+  margin: 40px auto;
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   padding: 30px;
 }
 
@@ -350,8 +391,12 @@ section, main, footer, .cta {
 /* --- CTA SECTION --- */
 .cta {
   text-align: center;
-  padding: 40px 30px;
+  max-width: 1150px;
+  margin: 40px auto;
   background: linear-gradient(135deg, #FAF7F0 0%, #FFFFFF 100%);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 40px 30px;
 }
 
 .cta h3 {
@@ -391,10 +436,13 @@ section, main, footer, .cta {
 /* --- FOOTER --- */
 footer {
   text-align: center;
+  max-width: 1150px;
+  margin: 40px auto;
   padding: 25px 30px;
   background: #3F3935;
   color: #FFFFFF;
   border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
 
 footer p {
@@ -434,7 +482,7 @@ footer .disclosure {
 
 /* Small Tablets & Large Phones (≤768px) */
 @media (max-width: 768px) {
-  section, main, footer, .cta {
+  section, footer, .cta, .intro, .decorative-row, .provider-section, .comparison-table, .faq {
     margin: 25px 15px;
     padding: 25px 20px;
   }
@@ -473,6 +521,12 @@ footer .disclosure {
     gap: 20px;
   }
 
+  /* Make comparison table non-sticky on mobile */
+  .comparison-table {
+    position: relative;
+    top: auto;
+  }
+
   .comparison-table h2 {
     font-size: 1.5em;
   }
@@ -506,7 +560,7 @@ footer .disclosure {
     font-size: 0.95em;
   }
 
-  section, main, footer, .cta {
+  section, footer, .cta, .intro, .decorative-row, .provider-section, .comparison-table, .faq {
     margin: 20px 10px;
     padding: 20px 15px;
   }
@@ -627,7 +681,7 @@ footer .disclosure {
     display: none;
   }
 
-  section, main, footer, .cta {
+  .cta, section, footer, .intro, .decorative-row, .provider-section, .comparison-table, .faq {
     box-shadow: none;
     page-break-inside: avoid;
   }
