@@ -303,3 +303,34 @@ html {
   height: 100%;
   object-fit: cover;   /* fills box while keeping aspect ratio, may crop slightly */
 }
+
+/* --- RESPONSIVE & MAX WIDTH TWEAKS --- */
+@media (min-width: 1300px) {
+  /* Decorative images row stays centered, images scale up slightly but max out */
+  .decorative-row {
+    justify-content: center;
+  }
+
+  .decorative-img-wrapper {
+    width: 300px;      /* slightly bigger but uniform */
+    height: 200px;     /* maintain aspect ratio box */
+  }
+
+  /* Provider cards: max width per card to keep all 4 on one row */
+  main {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1280px; /* prevent stretching too far */
+  }
+}
+
+@media (max-width: 1200px) {
+  main {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* fallback for medium screens */
+  }
+
+  .decorative-img-wrapper {
+    width: 280px;
+    height: 180px;
+  }
+}
+
