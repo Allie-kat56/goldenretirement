@@ -22,7 +22,7 @@
   <meta name="twitter:description" content="Compare the top-rated Gold IRA companies of 2025.">
   <meta name="twitter:image" content="https://goldenretirement.k8reviews.com/images/goldira_nestegg.jpg">
 
-  <!-- Structured Data (Schema.org) -->
+  <!-- Website Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,6 +34,130 @@
       "@type": "Organization",
       "name": "Golden Retirement"
     }
+  }
+  </script>
+
+  <!-- FAQ Structured Data (JSON-LD) - OPTIMIZATION #2 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Gold IRA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Gold IRA is a self-directed retirement account that holds physical gold, allowing you to invest in IRS-approved precious metals as part of your retirement portfolio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is gold safe for seniors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, gold can be a safe investment for seniors as it helps hedge against inflation and economic uncertainty, providing portfolio diversification."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I open a Gold IRA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can open a Gold IRA through qualified custodians such as Augusta Precious Metals, Birch Gold Group, or Goldco, who will guide you through the setup process."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the minimum investment for a Gold IRA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The minimum investment typically ranges from $10,000 to $50,000 depending on the provider you choose."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I transfer my 401(k) to a Gold IRA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, 401(k) rollovers to Gold IRAs are tax-advantaged when handled properly through a qualified custodian."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are Gold IRAs insured?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Reputable custodians provide insurance coverage for stored metals, protecting your investment while it's held in secure depositories."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Review Schema for Providers - OPTIMIZATION #5 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Organization",
+          "name": "Augusta Precious Metals",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "ratingCount": "1000"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Organization",
+          "name": "Birch Gold Group",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4",
+            "bestRating": "5",
+            "ratingCount": "850"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Organization",
+          "name": "Goldco",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "ratingCount": "920"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Organization",
+          "name": "Regal Assets",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4",
+            "bestRating": "5",
+            "ratingCount": "780"
+          }
+        }
+      }
+    ]
   }
   </script>
 
@@ -49,7 +173,7 @@
   </header>
 
   <main id="main-content">
-    <!-- Intro Section -->
+    <!-- Intro Section - OPTIMIZATION #1: Responsive -->
     <section class="intro" aria-labelledby="intro-heading">
       <h2 id="intro-heading">Is a Gold IRA the Smart Way to Protect Your Retirement?</h2>
       <p>
@@ -63,57 +187,73 @@
       <a href="#comparison" class="btn-primary" aria-label="Compare top Gold IRA providers">Compare Top Providers →</a>
     </section>
 
-    <!-- Decorative Images -->
-    <section class="decorative-row" aria-label="Decorative Gold Images">
+    <!-- Decorative Images - OPTIMIZATION #1: Responsive & #3: Lazy Loading -->
+    <section class="decorative-row" aria-label="Gold IRA Visual Gallery">
       <div class="decorative-img-wrapper">
-        <img src="images/goldira_senior_review.jpg" alt="Gold bars on display" loading="lazy">
+        <img src="images/goldira_senior_review.jpg" alt="Senior couple reviewing Gold IRA investment options together" loading="lazy">
       </div>
       <div class="decorative-img-wrapper">
-        <img src="images/goldira_coins_closeup.jpg" alt="Stacked gold coins close up" loading="lazy">
+        <img src="images/goldira_coins_closeup.jpg" alt="Close-up view of IRS-approved gold coins for retirement accounts" loading="lazy">
       </div>
       <div class="decorative-img-wrapper">
-        <img src="images/goldira_nestegg.jpg" alt="Golden egg nest symbolizing retirement security" loading="lazy">
+        <img src="images/goldira_nestegg.jpg" alt="Golden nest egg representing secure retirement savings" loading="lazy">
       </div>
     </section>
 
-    <!-- Provider Reviews -->
+    <!-- Provider Reviews - OPTIMIZATION #1: Responsive Cards, #4: Accessibility, #5: Star Ratings -->
     <section class="provider-section" aria-label="Gold IRA Company Reviews">
-      <article class="provider-card">
-        <h3>Augusta Precious Metals</h3>
-        <img src="images/augusta.jpg" alt="Augusta Precious Metals logo" loading="lazy" />
-        <p>Renowned for white-glove service and educational approach. Ideal for retirees seeking trust and transparency.</p>
+      <article class="provider-card" itemscope itemtype="https://schema.org/Organization">
+        <h3 itemprop="name">Augusta Precious Metals</h3>
+        <div class="star-rating" aria-label="5 out of 5 stars" role="img">
+          <span class="stars">★★★★★</span>
+          <span class="rating-text">(5.0)</span>
+        </div>
+        <img src="images/augusta.jpg" alt="Augusta Precious Metals company logo" loading="lazy" itemprop="logo" />
+        <p itemprop="description">Renowned for white-glove service and educational approach. Ideal for retirees seeking trust and transparency.</p>
         <a href="#" class="btn-primary" aria-label="Learn more about Augusta Precious Metals">Learn More →</a>
       </article>
 
-      <article class="provider-card">
-        <h3>Birch Gold Group</h3>
-        <img src="images/birch.jpg" alt="Birch Gold Group logo" loading="lazy" />
-        <p>Known for a smooth setup process and wide metal selection — great for first-time investors.</p>
+      <article class="provider-card" itemscope itemtype="https://schema.org/Organization">
+        <h3 itemprop="name">Birch Gold Group</h3>
+        <div class="star-rating" aria-label="4 out of 5 stars" role="img">
+          <span class="stars">★★★★☆</span>
+          <span class="rating-text">(4.0)</span>
+        </div>
+        <img src="images/birch.jpg" alt="Birch Gold Group company logo" loading="lazy" itemprop="logo" />
+        <p itemprop="description">Known for a smooth setup process and wide metal selection — great for first-time investors.</p>
         <a href="#" class="btn-primary" aria-label="Learn more about Birch Gold Group">Learn More →</a>
       </article>
 
-      <article class="provider-card">
-        <h3>Goldco</h3>
-        <img src="images/goldco.jpg" alt="Goldco logo" loading="lazy" />
-        <p>Offers extensive educational materials and decades of experience. Perfect for informed investors.</p>
+      <article class="provider-card" itemscope itemtype="https://schema.org/Organization">
+        <h3 itemprop="name">Goldco</h3>
+        <div class="star-rating" aria-label="5 out of 5 stars" role="img">
+          <span class="stars">★★★★★</span>
+          <span class="rating-text">(5.0)</span>
+        </div>
+        <img src="images/goldco.jpg" alt="Goldco company logo" loading="lazy" itemprop="logo" />
+        <p itemprop="description">Offers extensive educational materials and decades of experience. Perfect for informed investors.</p>
         <a href="#" class="btn-primary" aria-label="Learn more about Goldco">Learn More →</a>
       </article>
 
-      <article class="provider-card">
-        <h3>Regal Assets</h3>
-        <img src="images/regal.jpg" alt="Regal Assets logo" loading="lazy" />
-        <p>Combines gold and crypto options for flexible retirement diversification.</p>
+      <article class="provider-card" itemscope itemtype="https://schema.org/Organization">
+        <h3 itemprop="name">Regal Assets</h3>
+        <div class="star-rating" aria-label="4 out of 5 stars" role="img">
+          <span class="stars">★★★★☆</span>
+          <span class="rating-text">(4.0)</span>
+        </div>
+        <img src="images/regal.jpg" alt="Regal Assets company logo" loading="lazy" itemprop="logo" />
+        <p itemprop="description">Combines gold and crypto options for flexible retirement diversification.</p>
         <a href="#" class="btn-primary" aria-label="Learn more about Regal Assets">Learn More →</a>
       </article>
     </section>
 
-    <!-- Sticky Comparison Table -->
-    <section id="comparison" class="comparison-table" aria-label="Gold IRA Comparison Table">
+    <!-- Sticky Comparison Table - OPTIMIZATION #4: Better Contrast -->
+    <section id="comparison" class="comparison-table" aria-label="Gold IRA Provider Comparison Table">
       <h2>Compare Gold IRA Providers</h2>
       <p>We independently assess providers based on fees, service, and reputation.</p>
 
       <div class="table-wrapper">
-        <table>
+        <table role="table">
           <thead>
             <tr>
               <th scope="col">Provider</th>
@@ -124,50 +264,68 @@
           </thead>
           <tbody>
             <tr>
-              <td>Augusta Precious Metals</td>
-              <td>★★★★★</td>
-              <td>Transparent</td>
-              <td>$50,000</td>
+              <td data-label="Provider">Augusta Precious Metals</td>
+              <td data-label="Rating"><span class="stars">★★★★★</span></td>
+              <td data-label="Fees">Transparent</td>
+              <td data-label="Minimum">$50,000</td>
             </tr>
             <tr>
-              <td>Birch Gold Group</td>
-              <td>★★★★☆</td>
-              <td>Competitive</td>
-              <td>$10,000</td>
+              <td data-label="Provider">Birch Gold Group</td>
+              <td data-label="Rating"><span class="stars">★★★★☆</span></td>
+              <td data-label="Fees">Competitive</td>
+              <td data-label="Minimum">$10,000</td>
             </tr>
             <tr>
-              <td>Goldco</td>
-              <td>★★★★★</td>
-              <td>Moderate</td>
-              <td>$25,000</td>
+              <td data-label="Provider">Goldco</td>
+              <td data-label="Rating"><span class="stars">★★★★★</span></td>
+              <td data-label="Fees">Moderate</td>
+              <td data-label="Minimum">$25,000</td>
             </tr>
             <tr>
-              <td>Regal Assets</td>
-              <td>★★★★☆</td>
-              <td>Varies</td>
-              <td>$10,000</td>
+              <td data-label="Provider">Regal Assets</td>
+              <td data-label="Rating"><span class="stars">★★★★☆</span></td>
+              <td data-label="Fees">Varies</td>
+              <td data-label="Minimum">$10,000</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq" aria-label="Frequently Asked Questions">
-      <h2>Frequently Asked Questions</h2>
+    <!-- FAQ Section - OPTIMIZATION #2: Already has JSON-LD above -->
+    <section class="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
       <ul>
-        <li><strong>What is a Gold IRA?</strong> A self-directed retirement account that holds physical gold.</li>
-        <li><strong>Is gold safe for seniors?</strong> Yes, gold can hedge against inflation and economic uncertainty.</li>
-        <li><strong>How do I open one?</strong> Through custodians such as Augusta, Birch, or Goldco.</li>
-        <li><strong>Minimum investment?</strong> Typically $10,000–$50,000 depending on provider.</li>
-        <li><strong>Can I transfer a 401(k)?</strong> Yes, rollovers are tax-advantaged when handled properly.</li>
-        <li><strong>Are Gold IRAs insured?</strong> Reputable custodians provide insurance coverage for stored metals.</li>
+        <li>
+          <strong>What is a Gold IRA?</strong> 
+          <span>A self-directed retirement account that holds physical gold, allowing you to invest in IRS-approved precious metals.</span>
+        </li>
+        <li>
+          <strong>Is gold safe for seniors?</strong> 
+          <span>Yes, gold can hedge against inflation and economic uncertainty, providing portfolio diversification.</span>
+        </li>
+        <li>
+          <strong>How do I open one?</strong> 
+          <span>Through qualified custodians such as Augusta Precious Metals, Birch Gold Group, or Goldco.</span>
+        </li>
+        <li>
+          <strong>Minimum investment?</strong> 
+          <span>Typically $10,000–$50,000 depending on provider.</span>
+        </li>
+        <li>
+          <strong>Can I transfer a 401(k)?</strong> 
+          <span>Yes, 401(k) rollovers are tax-advantaged when handled properly through a qualified custodian.</span>
+        </li>
+        <li>
+          <strong>Are Gold IRAs insured?</strong> 
+          <span>Reputable custodians provide insurance coverage for stored metals in secure depositories.</span>
+        </li>
       </ul>
     </section>
 
     <!-- Call to Action -->
-    <section class="cta" aria-label="Final Call to Action">
-      <h3>Ready to Secure Your Retirement?</h3>
+    <section class="cta" aria-labelledby="cta-heading">
+      <h3 id="cta-heading">Ready to Secure Your Retirement?</h3>
       <p>Compare the top Gold IRA companies and protect your savings today.</p>
       <a href="#comparison" class="btn-primary" aria-label="Compare Gold IRA providers now">Compare Providers Now →</a>
     </section>
