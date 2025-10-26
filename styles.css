@@ -274,7 +274,7 @@ html {
   margin: 40px auto;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   padding: 20px;
   background: #FFFFFF;
   border-radius: 12px;
@@ -283,9 +283,20 @@ html {
   gap: 20px;
 }
 
-.decorative-img {
-  max-width: 300px;
-  width: 100%;
+.decorative-img-wrapper {
+  width: 280px;        /* slightly smaller for better spacing */
+  height: 180px;       /* uniform height for all images */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
   box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  background: #fff;
+}
+
+.decorative-img-wrapper img {
+  height: 100%;        /* fills box height */
+  width: auto;         /* maintains aspect ratio */
+  object-fit: cover;   /* crops if necessary */
 }
