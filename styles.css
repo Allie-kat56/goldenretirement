@@ -177,4 +177,34 @@ html {
     opacity: 1;
     transform: translateY(0);
   }
-}   
+}
+
+ /*   Change includes - hover effects, alternating rows, sticky header, smooth scroll, fade-in
+   */  
+   
+.cta-image {
+  max-width: 200px;
+  display: block;
+  margin: 0 auto 15px auto;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.intro-image {
+  max-width: 300px;
+  width: 100%;
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.review-image {
+  max-width: 250px;
+  display: block;
+  margin: 15px auto;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+
