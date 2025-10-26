@@ -156,3 +156,25 @@ html {
   z-index: 2;
   background-color: #B8860B; /* ensure header remains visible */
 }
+
+/* ===========================================================
+   Sticky Comparison Table – Subtle Fade-In Animation
+=========================================================== */
+
+.comparison-table {
+  opacity: 0;              /* start invisible */
+  transform: translateY(10px); /* slight downward offset */
+  animation: fadeInUp 0.8s ease forwards; /* smooth fade-in + lift */
+  animation-delay: 0.3s;   /* small delay for natural feel */
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}   
